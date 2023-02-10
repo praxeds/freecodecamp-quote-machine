@@ -1,17 +1,60 @@
 <template>
   <nav>
-    <h2>oioioi</h2>
+    <section id="circles">
+      <span></span>
+      <span></span>
+      <span></span>
+    </section>
   </nav>
 </template>
 
 <script>
 export default {
   name: "Header",
-}
+};
 </script>
 
 <style scoped lang="scss">
-h2 {
-    color: red;
+// Colors
+$red: #fc615c;
+$yellow: #fdbe40;
+$green: #34ca49;
+
+$transition: all 0.2s ease-in-out;
+
+nav {
+  display: flex;
+  height: 2.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid #b6b5b6;
+  background: linear-gradient(#eeeeee, #d7d6d7);
+
+  section#circles {
+    flex: 0 0 6rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      transition: $transition;
+      &:nth-of-type(1) {
+        background: $red;
+      }
+      &:nth-of-type(2) {
+        background: $yellow;
+      }
+      &:nth-of-type(3) {
+        background: $green;
+      }
+      &:hover {
+        cursor: pointer;
+        filter: brightness(90%);
+      }
+    }
+  }
 }
 </style>
