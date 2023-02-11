@@ -5,12 +5,18 @@
       <span></span>
       <span></span>
     </section>
+    <Button/>
   </nav>
 </template>
 
 <script>
+import Button from "./buttons.vue";
+
 export default {
   name: "Header",
+  components: {
+    Button,
+  },
 };
 </script>
 
@@ -19,6 +25,7 @@ export default {
 $red: #fc615c;
 $yellow: #fdbe40;
 $green: #34ca49;
+$medium-gray: #b6b5b6;
 
 $transition: all 0.2s ease-in-out;
 
@@ -26,7 +33,7 @@ nav {
   display: flex;
   height: 2.5rem;
   border-radius: 0.5rem 0.5rem 0 0;
-  border-bottom: 1px solid #b6b5b6;
+  border-bottom: 1px solid $medium-gray;
   background: linear-gradient(#eeeeee, #d7d6d7);
 
   section#circles {
