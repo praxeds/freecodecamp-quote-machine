@@ -5,13 +5,24 @@
       <span></span>
       <span></span>
     </section>
-    <Button :icon="chevronBackOutline"/>
+    <section id="arrows">
+      <Button :icon="chevronBackOutline" />
+      <Button :icon="chevronForwardOutline" class="disabled" />
+    </section>
+    <Button :icon="documentTextOutline" class="more-padding" />
+    <div id="searchbar">
+      <textarea maxlength="50" placeholder="ChineseProverbs.live"></textarea>
+    </div>
   </nav>
 </template>
 
 <script>
 import Button from "./buttons.vue";
-import { chevronBackOutline } from 'ionicons/icons';
+import {
+  chevronBackOutline,
+  chevronForwardOutline,
+  documentTextOutline,
+} from "ionicons/icons";
 
 export default {
   name: "Header",
@@ -20,8 +31,10 @@ export default {
   },
   setup() {
     return {
-      chevronBackOutline
-    }
+      chevronBackOutline,
+      chevronForwardOutline,
+      documentTextOutline,
+    };
   },
 };
 </script>
@@ -66,6 +79,50 @@ nav {
       &:hover {
         cursor: pointer;
         filter: brightness(90%);
+      }
+    }
+  }
+
+  section#arrows {
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .more-padding {
+    min-width: 2.5rem;
+    margin-left: 1rem;
+  }
+
+  #searchbar {
+    flex: 0 0 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.6rem;
+    padding: 0;
+    margin: auto 0 auto 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background: #fdfdfd;
+    box-shadow: 0 2px 1px 0 $medium-gray;
+
+    textarea {
+      width: 100%;
+      height: 70%;
+      border: none;
+      background: none;
+      text-align: center;
+      resize: none;
+      overflow: hidden;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        color: inherit;
+        opacity: 1;
       }
     }
   }

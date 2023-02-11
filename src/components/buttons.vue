@@ -1,16 +1,16 @@
 <template>
   <button>
-    <ion-icon :icon=icon />
+    <ion-icon :icon="icon" />
   </button>
 </template>
 
 <script>
-import { IonIcon } from '@ionic/vue';
+import { IonIcon } from "@ionic/vue";
 
 export default {
   name: "Button",
   components: { IonIcon },
-  props: ['icon']
+  props: ["icon"],
 };
 </script>
 
@@ -19,9 +19,15 @@ export default {
 $dark-gray: #5b5b5b;
 $medium-gray: #b6b5b6;
 
+.disabled {
+  ion-icon {
+    color: #bababa;
+  }
+}
+
 button {
-  min-width: 2rem;
-  height: 1.7rem;
+  min-width: 1.8rem;
+  height: 1.6rem;
   padding: 0;
   margin: auto 0;
   border-radius: 0.3rem;
