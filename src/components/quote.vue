@@ -60,6 +60,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 
   > * {
     margin: 0;
@@ -103,9 +104,11 @@ section {
     align-items: center;
     background: #fdfdfd;
     box-shadow: 0 2px 1px 0 $medium-gray;
+    pointer-events: all;
 
     &:hover {
       background: #333;
+      cursor: pointer;
       color: #f1f1f1;
     }
   }
