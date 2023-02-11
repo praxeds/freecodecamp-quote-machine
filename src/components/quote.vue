@@ -3,12 +3,25 @@
     <h2 :class="{ fadeout: disabled }">{{ pinyin }}</h2>
     <h1 :class="{ fadeout: disabled }">{{ proverb }}</h1>
     <h3 :class="{ fadeout: disabled }">{{ translation }}</h3>
-    <button @click="fetchNewProverb">Click me</button>
+    <button @click="fetchNewProverb" title="New quote">
+      <ion-icon :icon="reloadOutline"></ion-icon>
+    </button>
+    <aside>
+      <button>
+        <ion-icon :icon="logoTwitter"></ion-icon>
+      </button>
+      <button>
+        <a href="https://github.com/praxeds" target="_blank">
+            <ion-icon :icon="logoGithub"></ion-icon>
+        </a>
+      </button>
+    </aside>
   </section>
 </template>
 
 <script>
 import axios from "axios";
+import { reloadOutline, logoTwitter, logoGithub } from "ionicons/icons";
 export default {
   name: "Quote",
   data() {
@@ -17,6 +30,13 @@ export default {
       pinyin: null,
       translation: null,
       disabled: false,
+    };
+  },
+  setup() {
+    return {
+      reloadOutline,
+      logoTwitter,
+      logoGithub,
     };
   },
   methods: {
@@ -32,8 +52,8 @@ export default {
         );
     },
     fetchNewProverb() {
-      this.disabled = true;
       this.fetchProverb();
+      this.disabled = true;
       setTimeout(() => {
         this.disabled = false;
       }, 2000);
@@ -71,12 +91,6 @@ section {
     font-size: 4rem;
     font-weight: 400;
     margin-bottom: 0.7rem;
-    &::before {
-      content: "“";
-      font-size: 6rem;
-      font-weight: 700;
-      margin-right: 0.5rem;
-    }
   }
 
   h2 {
@@ -92,25 +106,42 @@ section {
 
   button {
     margin: 0;
-    padding: 1.5rem 4.5rem;
     border: none;
     border-radius: 0.3rem;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fdfdfd;
     box-shadow: 0 2px 1px 0 $medium-gray;
     pointer-events: all;
-
+    transition: all 0.2s ease-in-out;
     &:hover {
-      background: #333;
+      background: #151515;
       cursor: pointer;
-      color: #f1f1f1;
+      ion-icon {
+        color: #fdfdfd;
+      }
     }
+    ion-icon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  > button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 1rem 1rem 0;
+  }
+
+  aside {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 1rem 1rem;
+    display: flex;
+    gap: 0.5rem;
   }
 }
 
