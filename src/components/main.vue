@@ -1,17 +1,21 @@
 <template>
   <main>
     <Header />
+    <Quote />
+    <!-- aside is for the blurry effect -->
     <aside></aside>
   </main>
 </template>
 
 <script>
 import Header from "./header.vue";
+import Quote from "./quote.vue";
 
 export default {
   name: "Main",
   components: {
     Header,
+    Quote,
   },
 };
 </script>
