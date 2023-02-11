@@ -19,10 +19,15 @@
 
 ## About The Project
 
+<div align="center">
+
 <img src="./public/header.gif" alt="Header">
 <br />
 
-    Objective: Build an app that is functionally similar to this: https://random-quote-machine.freecodecamp.rocks/.
+    Objective: Build an app that is functionally similar to this:
+    https://random-quote-machine.freecodecamp.rocks/
+
+</div>
 
 ## Built With
 
@@ -34,3 +39,8 @@
 ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
 </div>
+
+
+## To-Do
+
+- [ ] Make it responsive
