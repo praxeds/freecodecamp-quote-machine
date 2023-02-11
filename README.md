@@ -23,9 +23,11 @@
 
 <img src="./public/header.gif" alt="Header">
 <br />
+<br />
 
-    Objective: Build an app that is functionally similar to this:
-    https://random-quote-machine.freecodecamp.rocks/
+Objective: Build an app that is functionally similar to this:
+
+[https://random-quote-machine.freecodecamp.rocks/](https://random-quote-machine.freecodecamp.rocks/)
 
 </div>
 
