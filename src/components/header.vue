@@ -5,17 +5,23 @@
       <span></span>
       <span></span>
     </section>
-    <Button/>
+    <Button :icon="chevronBackOutline"/>
   </nav>
 </template>
 
 <script>
 import Button from "./buttons.vue";
+import { chevronBackOutline } from 'ionicons/icons';
 
 export default {
   name: "Header",
   components: {
     Button,
+  },
+  setup() {
+    return {
+      chevronBackOutline
+    }
   },
 };
 </script>

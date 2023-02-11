@@ -1,13 +1,16 @@
 <template>
   <button>
+    <ion-icon :icon=icon />
   </button>
 </template>
 
 <script>
+import { IonIcon } from '@ionic/vue';
 
 export default {
   name: "Button",
-  props: ['oi'],
+  components: { IonIcon },
+  props: ['icon']
 };
 </script>
 
@@ -26,20 +29,15 @@ button {
   background: #fdfdfd;
   box-shadow: 0 2px 1px 0 $medium-gray;
 
-  div.ion {
-    width: 100%;
-    height: 100%;
+  ion-icon {
+    width: auto;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $dark-gray;
     &:hover {
       cursor: pointer;
-    }
-
-    svg {
-      width: auto;
-      height: 1.6rem;
-      fill: $dark-gray;
     }
   }
 }
