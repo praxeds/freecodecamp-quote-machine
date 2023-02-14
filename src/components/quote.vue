@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 :class="{ fadeout: disabled }">{{ pinyin }}</h2>
+    <!-- <h2 :class="{ fadeout: disabled }">{{ pinyin }}</h2> -->
     <h1 :class="{ fadeout: disabled }">{{ proverb }}</h1>
     <h3 :class="{ fadeout: disabled }">{{ translation }}</h3>
     <button @click="fetchNewProverb" title="New quote">
@@ -12,7 +12,7 @@
       </button>
       <button>
         <a href="https://github.com/praxeds" target="_blank">
-            <ion-icon :icon="logoGithub"></ion-icon>
+          <ion-icon :icon="logoGithub"></ion-icon>
         </a>
       </button>
     </aside>
@@ -87,21 +87,38 @@ section {
     text-align: center;
   }
 
+  h1, h2, h3 {
+    padding: 0 2rem;
+  }
+
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 400;
     margin-bottom: 0.7rem;
+    @media (max-width: 1399.98px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 991.98px) {
+      font-size: 2.5rem;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 2rem;
+    }
+  }
+
+  h3 {
+    @media (max-width: 991.98px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 767.98px) {
+      font-size: 0.7rem;
+    }
   }
 
   h2 {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: inherit;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    word-spacing: 2.2rem;
+    word-spacing: 2rem;
   }
 
   button {

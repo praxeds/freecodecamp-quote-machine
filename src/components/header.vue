@@ -91,6 +91,12 @@ nav {
       gap: 0.5rem;
       padding-left: 1rem;
 
+      > button {
+          @media (max-width: 575.98px) {
+            display: none;
+          }
+        }
+
       section#circles {
         display: flex;
         justify-content: space-between;
@@ -124,6 +130,9 @@ nav {
         justify-content: space-between;
         align-items: center;
         gap: 0.2rem;
+        @media (max-width: 575.98px) {
+          display: none;
+        }
       }
     }
 
@@ -143,6 +152,12 @@ nav {
         border-top: 1px solid $medium-gray;
         border-left: 1px solid $medium-gray;
       }
+
+      > button {
+        @media (max-width: 575.98px) {
+          display: none;
+        }
+      }
     }
   }
 
@@ -159,6 +174,9 @@ nav {
     border: none;
     background: #fdfdfd;
     box-shadow: 0 2px 1px 0 $medium-gray;
+    @media (max-width: 575.98px) {
+      flex: 100;
+    }
 
     textarea {
       width: 100%;
